@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod321
+  name: pod321
+spec:
+  containers:
+  - image: nginx
+    name: pod321
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  nodeName: cka-cluster3-worker
+status: {}

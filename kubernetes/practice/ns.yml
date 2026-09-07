@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dop1
+  labels:
+    for: me
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      op: po
+  template:
+    metadata:
+      labels:
+        op: po
+    spec:
+      nodeSelector:
+        name: soham
+      tolerations:
+      - key: name
+        operator: Equal
+        value: abc
+        effect: NoSchedule
+      containers:
+      - image: nginx
+        name: com1
+        ports:
+        - containerPort: 80
+
+

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-service
+
+spec:
+  selector:
+    app: abc-dep
+
+  ports:
+  - port: 8080
+    targetPort: 80

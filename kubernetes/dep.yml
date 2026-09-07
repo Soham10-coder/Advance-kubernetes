@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: abc-dep
+  name: first-dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: abc-dep
+  template:
+    metadata:
+      labels:
+        app: abc-dep
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80

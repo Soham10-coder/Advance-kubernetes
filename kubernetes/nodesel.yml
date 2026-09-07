@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: op1
+  name: op1
+spec:
+  containers:
+  - image: nginx
+    name: op1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  nodeSelector:
+    name: sb
+status: {}

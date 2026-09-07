@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nginx-clusterip
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: abc-dep
+
+  ports:
+  - port: 8081
+    targetPort: 80

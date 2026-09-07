@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      for: app
+  template:
+    metadata:
+      labels:
+        for: app
+      name: p1
+    spec:
+      containers:
+      - image: nginx
+        name: c1
+        ports:
+        - containerPort: 80

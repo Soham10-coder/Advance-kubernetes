@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: po1
+  name: po1
+spec:
+  containers:
+  - image: nginx
+    name: po1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations:
+  - key: 'for'
+    operator: 'Equal'
+    value: 'you'
+    effect: 'NoSchedule'
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: for
+            operator: In
+            values:
+            - me
+
+status: {}

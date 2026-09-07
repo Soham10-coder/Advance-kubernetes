@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: deplyment
+  name: deplyment
+spec:
+  containers:
+  - args:
+    - l2
+    image: nginx
+    name: deplyment
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
